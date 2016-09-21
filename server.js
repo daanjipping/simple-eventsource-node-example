@@ -14,7 +14,7 @@ app.get("/subscribe", (req, res, next) => {
 	let fn = (update) => res.write(`data: ${update}\n\n`)
 	dispatcher.on("update", fn)
 
-  let time = setInterval(() => {
+	let time = setInterval(() => {
 		dispatcher.emit("update", new Date().getTime())
 	}, 100)
 
